@@ -1,0 +1,52 @@
+To uninstall OpenJDK (if installed). First check which OpenJDK packages are installed.
+sudo dpkg --list | grep -i jdk
+
+To remove openjdk:
+sudo apt-get purge openjdk*
+
+Uninstall OpenJDK related packages.
+sudo apt-get purge icedtea-* openjdk-*
+
+Check that all OpenJDK packages have been removed.
+sudo dpkg --list | grep -i jdk
+
+
+
+export PATH="/android-studio-ide-141.2456560-linux/android-studio/bin/:$PATH"
+sudo ln -s /android-studio-ide-141.2456560-linux/android-studio/bin/studio.sh /usr/local/bin/studio
+
+
+To kill VNC server session 
+vncserver -kill :4
+
+To change VNCserve screen size
+vncserver -geometry 1366x768
+
+To run a 32-bit executable file on a 64-bit multi-architecture Ubuntu system, you have to add the i386 architecture and install the three library packages libc6:i386, libncurses5:i386, and libstdc++6:i386:
+sudo dpkg --add-architecture i386
+
+Then:
+sudo apt-get update
+sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386
+
+add-apt-repository ppa:webupd8team/java
+apt-get update
+apt-get install oracle-java7-installer
+
+
+
+http_proxy=http://10.137.195.200:9000/    https_proxy=https://10.137.195.200:9000/
+
+
+
+changing the user name in ubuntu
+sudo -i
+killall -u oldname
+id oldname
+usermod -l newname oldname
+groupmod -n newname oldname
+usermod -d /home/newname -m newname
+usermod -c “New_real_name” newname
+id newname
+
+

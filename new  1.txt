@@ -1,0 +1,26 @@
+Sub Button1_Click()
+Dim iCount, jCount As Long
+Dim LRow, LCol As Long
+Dim Temp1, Temp2 As String
+
+
+Application.ScreenUpdating = False
+Application.DisplayAlerts = False
+
+Sheets("Sheet8").Select
+LRow = ActiveSheet.Cells(Rows.Count, 1).End(xlUp).Row
+LCol = ActiveSheet.Cells(1, Columns.Count).End(xlToLeft).Column
+   ActiveWorkbook.Worksheets("Sheet8").Cells(1, "E").Value = LRow
+For iCount = 1 To LRow
+
+         For jCount = 1 To LRow
+          
+            If Cells(iCount, "A") Like Cells(jCount, "B") Then
+                ActiveWorkbook.Worksheets("Sheet8").Cells(iCount, "F").Value = "inside loop"
+                ActiveWorkbook.Worksheets("Sheet8").Cells(jCount, "D").Value = "PASS"
+            
+            End If
+          Next jCount
+ Next iCount
+ 
+End Sub
